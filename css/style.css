@@ -1,0 +1,579 @@
+
+body{
+	margin:0;
+	padding:0;
+	background:#fff;
+	font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  position: absolute;
+  background-color: #f2f2f2;
+ }
+body a{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;			   
+}	
+p{
+	margin:0;
+}
+ul{
+margin:0;
+padding:0;
+}
+
+/*--- slider-css --*/
+.slider{
+	position:relative;
+}
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+.rslides img {
+  display: block;
+  height: 600px;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
+.rslides_tabs {
+  text-align: center;
+  width: 100%;
+  position:absolute;
+  bottom:5%;
+  z-index:999;
+  }
+.rslides_tabs li {
+  display: inline-block;
+  }
+.rslides_tabs a {
+   border:1px solid #999;
+  }
+.rslides_tabs li:first-child {
+  margin-left: 0;
+  }
+.rslides_tabs .rslides_here a {
+  color: #fff;
+  font-weight: bold;
+  }
+
+#slider-pager {
+  margin-top: -40px;
+  position: relative;
+}  
+
+#slider-pager  li{
+  display: inline;
+}
+
+#slider-pager .rslides_here a{
+  background: white;
+}
+
+
+#slider-pager li a{
+    display: inline-block;
+    width:18px;
+    height:5px;
+    cursor: pointer;
+}
+.caption{
+	position:absolute;
+	top:0;
+	width:60%;
+	left:19%;
+	text-align:center;
+	top:80%;
+}
+.caption h4{
+	color:#FFF;
+	font-family: 'Raleway', sans-serif;
+	font-weight:300;
+	font-size:2.5em;
+	text-transform:uppercase;
+  position: absolute;
+  bottom: 50px;
+  text-align: center;
+  width: 100%;
+}
+.caption p{
+	color:#FFF;
+	font-weight:200;
+	font-size:1.3em;
+	width:75%;
+	margin:5px auto;
+  bottom: 40px;
+}
+
+.content {
+  position: relative;
+  margin-top: 50px;
+  height: 420px;
+  width: 80%;
+  background-color:white;
+  padding: 0; 
+  
+}
+
+
+
+.content ul {
+  width: 100%;
+  list-style-type: none;
+}
+
+.col-sm-2 {
+  border-top: 2px solid #1ac5ff;
+  border-left: 2px solid #1ac5ff;
+  border-bottom: 2px solid #1ac5ff;
+  padding: 0;
+  padding-left: 10px;
+  width: 250px;
+  position: absolute;
+}
+
+.leftbar li {
+  width: 100%;
+  position: relative;
+  height: 60px;
+  border-bottom: 1px dashed grey;
+  border-right: 2px solid #1ac5ff;
+}
+
+.leftbar li:last-child {
+   border-bottom: 0px;
+}
+
+.leftbar li:hover{
+  cursor:pointer;
+  border-left: 0px;
+  border-right: 0px;
+  
+}
+
+
+.category{
+  width: 100%;
+  height: 100%;
+}
+
+.title{
+  margin-top: 10px;
+  width: 90%;
+  float: left;
+  display: inline-block;
+}
+
+.title h4 {
+  color: #1aa3ff;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.title a{
+  text-decoration: none;
+  margin-top: 10px;
+  margin-right: 8px;
+  font-size: 100%;
+  bottom: 0;
+}
+
+.icon {
+  text-align: right;
+  margin-top: 20px;
+  width: 10%;
+  float: right;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.icon i {
+  color: grey;
+}
+
+.leftbar li:hover .icon i{
+  color: #1aa3ff;
+}
+
+.col-sm-10 {
+  position: relative;
+  height: 420px;
+  left: 300px;
+  text-align: left;
+  display: inline-block;
+}
+
+.grid {
+   position: relative;
+   height: 425px;
+   display: block;
+   padding-right: 100px;
+}
+
+.grid-list {
+  position: relative;
+  display: inline-block;
+  height:420px;
+  top: 0;
+  margin-right: 10px;
+}
+
+
+
+.showList {
+  height: 100%;
+  border: 0px;
+
+}
+
+.showList img {
+   top: 0px;
+   height: 80px;
+}
+
+.item-name {
+  width: 100%;
+  position: absolute;
+  color: #1ac5ff;
+  font-size: 150%;
+  top: 120px;
+  height: 30px;
+  text-align: center;
+}
+
+.item-alias {
+  width: 100%;
+  position: absolute;
+  font-size: 125%;
+  font-weight: 800;
+  top: 150px;
+  height: 30px;
+  color: #bfbfbf;
+  text-align: center;
+}
+
+.city-list {
+  position: absolute;
+  top:175px;
+  height: 240px;
+  width: 100%;
+}
+
+.city-list ul li {
+  margin-top: 5px;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.content2 {
+  position: relative;
+  margin-top: 50px;
+  height: 500px;
+  width: 80%;
+  padding: 0;
+}
+
+.content2-head {
+ 
+  position: relative;
+  width: 100%;
+  height: 30px;
+  border-left: 5px solid #1ac5ff;
+
+}
+
+
+.content-grid .thumbnail:hover{
+   border: 1px solid yellow;
+}
+
+.content-grid div:hover .description p{
+   text-decoration: underline;
+}
+
+
+
+.content2-head h4 {
+
+  font-weight: 200;
+  font-size: 170%;
+  float: left;
+
+
+}
+
+.content2-head ul {
+  float: right;
+  margin-right: 70px;
+  list-style-type: none;
+
+}
+
+.content2-head ul li{
+  display: inline;
+  margin-right: 40px;
+}
+
+.content2-head ul li:hover{
+  border-bottom: 2px solid #1ac5ff;
+  color: #1ac5ff;
+  cursor: pointer;
+}
+
+.content2-body {
+  background-color: white;
+   padding-left: 10px;
+   padding-right: 10px;
+   width: 100%;
+   position: relative;
+   height: 500px;
+}
+
+.row {
+  height: 50%;
+  padding-top:20px; 
+  position: relative;
+}
+
+
+
+.slogan {
+  width: 200px;
+  height: 80px;
+  margin-top: -100px;
+  margin-left: 40px;
+  background-color: rgba(145, 127, 109, 0.5);
+  position: relative;
+  color: white;
+  padding-left: 8px;
+  text-align: center;
+  padding-top: 28px;
+}
+
+.border-left{
+  top: 5px;
+  left: 5px;
+  position: absolute;
+  height:20%; 
+  width:12%;
+  border-top: 3px solid rgba(255, 255, 255, 0.06);
+  border-left: 3px solid rgba(255, 255, 255, 0.06);
+}
+
+.border-right{
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+  height:20%; 
+  width:12%;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.06);
+  border-right: 3px solid rgba(255, 255, 255, 0.06);
+}
+.thumbnail {
+  padding: 0;
+  height: 230px;
+  border: 1px groove rgba(19, 17, 16, 0.13) ;
+}
+
+
+
+.thumbnail img {
+  height: 145px;
+  width: 100%;
+  border: 0;
+}
+
+#poster {
+  height: 230px;
+}
+
+.satisfied {
+  width: 100%;
+  height: 30px;
+  margin-top: -30px;
+  background-color: rgba(18, 16, 16, 0.3);
+  position: relative;
+  color: white;
+  padding-left: 8px;
+  padding-top: 5px;
+}
+
+.price {
+  width: 100%;
+  height: 42.5px;
+  color: rgba(246, 104, 3, 0.69);
+  text-align: bottom;
+  font-weight: 400;
+  padding-left: 10px;
+}
+
+.price span{
+    font-size:200%; 
+}
+
+.description {
+  padding-left: 10px;
+
+}
+
+.description p {
+  font-size: 160%；
+}
+
+
+.content3 {
+  position: relative;
+  margin-top: 50px;
+  height: 500px;
+  width: 100%;
+  padding: 0;
+  background-color: white;
+  border: 2px solid rgba(19, 17, 16, 0.13);
+}
+
+.content3-head {
+  position: relative;
+  width: 100%;
+  height: 40px;
+}
+
+.content3-head h4 {
+  padding-top: 15px;
+  padding-left: 5px;
+  font-weight: 800;
+  font-size: 150%;
+  float: left;
+  color: #1ac5ff;
+}
+
+.content3-head ul {
+  float: right;
+  margin-right: 70px;
+  padding-top: 15px;
+  list-style-type: none;
+}
+
+.content3-head ul li{
+  display: inline;
+  margin-right: 2px;
+
+}
+
+.content3-head ul li:hover{
+  border-bottom: 2px solid blue;
+  color: blue;
+  cursor: pointer;
+}
+
+.content3-body {
+  background-color: white;
+   width: 100%;
+   position: relative;
+   height: 510px;
+}
+
+.thumbnail{
+   width: 100%;
+}
+
+.leftmost {
+  height: 460px;
+  padding-right: 5px;
+ 
+  padding-bottom: 5px;
+
+}
+
+.leftmost img {
+  height: 478px;
+  padding: 0;
+}
+
+.one {
+  padding-left: 2.5px;
+  
+  padding-bottom: 5px;
+
+}
+
+.two {
+  padding-left: 2.5px;
+ 
+  padding-bottom: 5px;
+
+}
+
+.one img {
+  height: 100%;
+}
+
+.two img {
+  height: 100%;
+}
+
+.showList img {
+   top: 0px;
+   height: 120px;
+}
+
+.showList {
+  border: 0px;
+}
+
+.products-detail {
+   width: 100%;
+  height: 60px;
+  margin-top: -120px;
+  background-color: rgba(18, 16, 16, 0.3);
+  position: relative;
+  color: white;
+  padding-left: 8px;
+  padding-top: 5px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 120%;
+}
+
+.products-detailOne {
+   width: 100%;
+  height: 60px;
+  margin-top: -250px;
+  background-color: rgba(18, 16, 16, 0.3);
+  position: relative;
+  color: white;
+  padding-left: 8px;
+  padding-top: 5px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 120%;
+}
+
+.products-detail:nth-child(1) {
+     margin-top: -200px;
+}
+
+.content3-body .thumbnail{
+  border: 0;
+}

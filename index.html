@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html ng-app="usitrip">
+<head>
+<title>Home</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+<script src="js/node_modules/angular.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Chinese Character-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--icon-->
+<script>
+        angular.module("usitrip", ["customFilters"]);
+    </script>
+ <script src="js/controllers/usitrip.js"></script>
+ <script src="js/filters/customFilters.js"></script>
+ <script src="js/controllers/tripItemListControllers.js"></script>
+</head>
+<body ng-controller="usitripCtrl">
+
+ <script src="js/responsiveslides.min.js"></script>
+  <script>
+   
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+        manualControls: '#slider-pager',
+      });
+    });
+  </script>   
+    <div class="slider">
+	    <!-- Slideshow 6 -->
+	    <ul class="rslides" id="slider">
+		  <li><img src="images/1.jpg" alt="">
+	      	<div class="caption">
+	      		<h4>用脚步丈量人间到天堂的距离</h4>
+					 <p>亚丁 最接近天堂的地方 超烂的天空 超大的云朵</p>
+	      	</div>
+	      </li>
+	      <li><img src="images/2.jpg" alt="">
+	      	<div class="caption">
+	      		<h4>用智慧的大脑追赶未来的脚步</h4>	  
+				 <p>旧金山湾区 世界顶尖科技的殿堂 想不到的创意 出其不意的美丽</p>
+	      	</div>
+	      </li>	      
+	      <li><img src="images/3.jpg" alt="">
+	      	<div class="caption">
+	      		<h4>用明亮的双眼观赏千年不变的美丽</h4>	  
+					 <p>希腊 没有文字可以匹配她的美丽 静静得看 轻轻的想</p>
+	      	</div>
+	      </li>
+	       <li><img src="images/4.jpg" alt="">
+	      	<div class="caption">
+	      		<h4>用心去穿越历史的长河</h4>
+					 <p>北京 沉睡着千年的历史 耀眼的古城 厚积的文化</p>
+	      	</div>
+	      </li>
+	      <li><img src="images/5.jpg" alt="">
+	      	<div class="caption">
+	      		<h4>用双手掀开草原的面纱</h4>	  
+				 <p>非洲 与神最接近的地方 超自然的天堂</p>
+	      	</div>
+	      </li>	      
+	      <li><img src="images/6.jpg" alt="">
+	      	<div class="caption">
+	      		<h4>用肌肤去感受大自然的凉意</h4>	  
+					 <p>阿拉斯加 没有白天的地方 极光 极光</p>
+	      	</div>
+	      </li>
+	    </ul>
+	    <!-- Slideshow 6 Pagers -->
+	    <ul id="slider-pager">
+	      <li><a href="#"></a></li>
+	      <li><a href="#"></a></li>
+	      <li><a href="#"></a></li>
+	      <li><a href="#"></a></li>
+	      <li><a href="#"></a></li>
+	      <li><a href="#"></a></li>
+	    </ul>    
+    </div>	
+
+ 
+    <div class="container content" ng-controller="tripItemListCtrl"><!--content starts!-->
+       <div class="col-sm-2" >
+          <ul class="leftbar">
+          	<li ng-repeat="item in result = (data.tripItems | unique:'category')"
+               ng-mouseover="selectCategory(item)">
+          		<div class="category">
+          			<div class="title">
+	          			<h4>{{item}}</h4>
+                       
+                        <p><a ng-repeat="sample in data.sample[$index]">{{sample}}</a></p>
+	          		</div>
+          			<div class="icon">
+          			    <i class="fa fa-chevron-right"></i>
+          		    </div>
+          		</div>
+
+          	</li>
+          	
+          </ul>
+       </div>
+       <div class="col-sm-10">
+
+       	<ul class="grid">
+       	  <li class="grid-list" ng-repeat="item in filteredtripItems = (data.tripItems | filter:categoryFilterFn) " ng-style="{ 'width' : 0.8 / filteredtripItems.length * 100 + '%'}">
+             <div class="thumbnail showList">
+			      <img src="{{item.image}}" alt="Loading">
+			      <div class="item-name">{{item.name}}</div>
+			      <div class="item-alias">{{item.alias}}</div>
+			      <div class="city-list">
+			        <ul>
+			      	  <li ng-repeat="city in item.citys">
+			      		<a>{{city}}</a>
+			      	  </li>
+			        </ul>
+			      </div>
+			</div>
+          </li>
+        </ul>
+       </div>
+
+    </div><!--contentes ends-->
+
+      <div class="container content2" ng-controller="selfListCtrl">
+    	<div class="content2-head">
+    		<h4>跟队自驾</h4>
+    		<ul>
+    			<li ng-repeat="item in result = (data.selfTripItem | unique:'category')"
+               ng-mouseover="selectCategory(item)">{{item}}</li>
+    			<li ng-mouseover="selectCategory(item)">{{item}}</li>
+    			
+    		</ul>
+    	</div>
+    	<div class="content2-body">
+    		<div class="row">
+			  <div class="col-sm-6 col-md-6">
+			    <div class="thumbnail">
+			      <img id="poster" src="images/1.jpg" alt="Loading">
+			      <div class="slogan">
+			      	<div class="border-left">
+			      	</div>
+			  	    <h4>每一公里 都是传奇</h4>
+			  	    <div class="border-right">
+			  	    </div>
+			      </div>
+			    </div>
+			  </div>
+
+			 
+			  <div class="col-sm-3 col-md-3 content-grid" ng-repeat="item in data.selfTripItem | filter:categoryFilterFn | limitTo: 6 " ng-mouseover="select($index)" ng-mouseleave="release()">
+			    <div class="thumbnail">
+			      <img src="{{item.image}}" alt="Loading">
+			      <div class="satisfied" ng-show="$index == index">满意度: {{item.satisfied}}</div>
+			      <div class="price"><p>￥<span>{{item.price}}</span>起</p></div>
+			      <div class="description"> <p><span ng-show="item.season != null">[{{item.season}}]</span> <{{item.title}}>{{item.note}} </p> </div>
+			    </div>
+			  </div>
+		</div>
+	</div>
+
+    <div class="container content3" ng-controller="ItemListCtrl">
+    	<div class="content3-head">
+    		<h4>热门品牌 TOP5</h4>
+    		<ul>
+    			<li ng-repeat="item in result = (data.products | unique:'category' | limitTo:10)"
+               ng-mouseover="selectCategory(item)"><label class="label label-default">{{item}}</label></li>
+    			<li ng-mouseover="more()"><label class="label label-default">更多商品</label></li>
+    			
+    		</ul>
+    	</div>
+       <div class="content3-body" ng-repeat="item in data.products | filter:categoryFilterFn ">
+    	<div class="row">
+    		<div class="col-sm-4 col-md-4 leftmost">
+			    <div class="thumbnail" ng-mouseover="selectHover(0)" ng-mouseleave="release()">
+			      <img src="{{item.citys[0].image}}" alt="Loading">
+			        <div class="products-detailOne" ng-show="selector == 0">{{item.citys[0].name}} </br>{{item.citys[0].number}}个产品</div>
+				</div>
+			 </div>
+			 <div class="col-sm-3 col-md-3 one">
+			    <div class="thumbnail" ng-mouseover="selectHover(1)" ng-mouseleave="release()">
+			      <img  src="{{item.citys[1].image}}" alt="Loading">
+			      <div class="products-detail" ng-show="selector == 1">{{item.citys[1].name}} </br>{{item.citys[1].number}}个产品</div>
+			    </div>
+			 </div>
+			 <div class="col-sm-5 col-md-5 two">
+			    <div class="thumbnail" ng-mouseover="selectHover(2)" ng-mouseleave="release()">
+			      <img  src="{{item.citys[2].image}}" alt="Loading">
+			      <div class="products-detail" ng-show="selector == 2">{{item.citys[2].name}} </br>{{item.citys[2].number}}个产品</div>
+			    </div>
+			 </div>
+			 <div class="col-sm-5 col-md-5 two">
+			    <div class="thumbnail" ng-mouseover="selectHover(3)" ng-mouseleave="release()">
+			      <img  src="{{item.citys[3].image}}" alt="Loading">
+			      <div class="products-detail" ng-show="selector == 3">{{item.citys[3].name}} </br>{{item.citys[3].number}}个产品</div>
+			    </div>
+			 </div>
+			 <div class="col-sm-3 col-md-3 one">
+			    <div class="thumbnail" ng-mouseover="selectHover(4)" ng-mouseleave="release()">
+			      <img  src="{{item.citys[4].image}}" alt="Loading">
+			      <div class="products-detail" ng-show="selector == 4">{{item.citys[4].name}} </br>{{item.citys[4].number}}个产品</div>
+			    </div>
+			 </div>
+    	</div>
+     </div>
+    </div>
+
+
+ </body>
+ </html>
